@@ -7,8 +7,6 @@ import numpy as np
 import pandas as pd
 import datetime as dt
 
-
-
 app = dash.Dash(
     __name__,
     meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1"}],
@@ -17,7 +15,6 @@ app.title = "Dashboard energia"
 
 server = app.server
 app.config.suppress_callback_exceptions = True
-
 
 # Load data from csv
 def load_data():
@@ -91,8 +88,6 @@ def plot_series(data, initial_date, proy):
 
     return fig
 
-
-
 def description_card():
     """
     :return: A Div containing dashboard title & descriptions.
@@ -108,7 +103,6 @@ def description_card():
             ),
         ],
     )
-
 
 def generate_control_card():
     """
@@ -239,7 +233,6 @@ def update_output_div(date, hour, proy):
         # Graficar
         plot = plot_series(data, initial_date, int(proy))
         return plot
-
 
 # Run the server
 if __name__ == "__main__":
